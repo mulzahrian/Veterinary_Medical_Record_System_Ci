@@ -16,6 +16,7 @@ class Auth extends CI_Controller
 
 	}
 
+	//AUTH INDEX
 	public function index()
 
 	{
@@ -37,7 +38,7 @@ class Auth extends CI_Controller
 
 	}
 
-
+	//Login
 	private function _login()
 
 	{
