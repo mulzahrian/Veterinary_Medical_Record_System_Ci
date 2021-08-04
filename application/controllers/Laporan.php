@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//Laporan data Controller
 class Laporan extends CI_Controller 
 
 {
