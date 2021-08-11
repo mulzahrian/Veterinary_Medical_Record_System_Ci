@@ -1,5 +1,7 @@
 **Veterinary Medical Record with Codeigniter**
-### Desc
+### Desc :
+
+This app is
 ```
 git clone https://github.com/mulzahrian/Veterinary_Medical_Record_System_Ci.git
 ```
