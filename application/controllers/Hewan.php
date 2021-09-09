@@ -35,10 +35,7 @@ class Dokter extends CI_Controller
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('hewan/index', $data);
 		$this->load->view('templates/footer');
-
-
     } else {
-
     	$data = [
             'id_hewan' => $this->input->post('id_hewan'),
             'jenis_hewan' => $this->input->post('jenis_hewan'),
@@ -67,16 +64,4 @@ class Dokter extends CI_Controller
         redirect('hewan');
     }
 
-    
-
-   
-
-    //hewan ternak 
-
-    
-
  }
-
-     
-
- 
