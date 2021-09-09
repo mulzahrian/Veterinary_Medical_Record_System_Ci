@@ -43,9 +43,6 @@ class Vaksin extends CI_Controller
 			redirect('vaksin');
 
 		}
-
-		
-
 	}
 public function hapus($id)
     {
