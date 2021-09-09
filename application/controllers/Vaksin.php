@@ -61,13 +61,7 @@ public function hapus($id)
         $this->session->userdata('email')])->row_array();
         $data['vaksin'] = $this->Vaksin_model->getVaksinById($id);
         
-
        $this->form_validation->set_rules('vaksin', 'Vaksin', 'required');
-     
-        
-        //$this->form_validation->set_rules('daerah', 'Daerah', 'required');
-        //$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
-        //$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -80,8 +74,6 @@ public function hapus($id)
             redirect('vaksin');
         }
     }
-
-    //end of ubah
 
 
 }
