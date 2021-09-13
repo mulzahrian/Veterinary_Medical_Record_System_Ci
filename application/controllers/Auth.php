@@ -16,7 +16,6 @@ class Auth extends CI_Controller
 
 	}
 
-	//AUTH INDEX
 	public function index()
 
 	{
@@ -28,17 +27,16 @@ class Auth extends CI_Controller
 		$this->load->view('auth/login');
 		$this->load->view('templates/auth_footer');
 
-
-		} else {
-			// validasinya lolos 
-			$this->_login();
+		} 
+		else 
+		{
+		$this->_login();
 		}
 		
 
 
 	}
 
-	//Login
 	private function _login()
 
 	{
@@ -46,13 +44,8 @@ class Auth extends CI_Controller
 		$password = $this->input->post('password');
 
 		$db_user = $this->db->get_where('db_user', ['email' => $email])->row_array();
-
-		//jika user ada 
 		if($db_user){
-
-			//jika usernya aktif
 			if($db_user['is_active'] == 1){
-				//password
 				if(password_verify($password, $db_user['password'])){
 					$data = [
 						'email' => $db_user['email'],
@@ -71,48 +64,26 @@ class Auth extends CI_Controller
 					
 
 				}else {
-
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   			Password Salah!!
 			</div>');
 			redirect('auth');
-
-
 				}
-
-
 			}else {
-
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   			 belum diaktifasi!!
 			</div>');
 			redirect('auth');
-
 			}
 		}else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   			User Belum Terdaftar!!
 			</div>');
 			redirect('auth');
-
 		}
-
-
-
 	}
 
-
-// perbarui registrasi
-
-
-
-//perbarui registrasi 
-
-
 	public function registration()
-
-
-
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[db_user.email]', [
@@ -124,8 +95,6 @@ class Auth extends CI_Controller
 		]);
 		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
-
-
 		if( $this->form_validation->run() == false) {
 
 		$data['title'] = 'Form | Registrasi';
@@ -134,11 +103,8 @@ class Auth extends CI_Controller
 		$this->load->view('templates/auth_footer');
 
 		} else {
-			//email 
 			$email = $this->input->post('email', true);
-
 			$data = [
-
 				'nama' => htmlspecialchars($this->input->post('nama', true)),
 				'email' => htmlspecialchars($email),
 				'gambar' => 'default.jpg',
@@ -148,37 +114,13 @@ class Auth extends CI_Controller
 				'tanggal_pembuat' => time() 
 
 			];
-
-			
-			// siapkan token
-            // siapkan token
-            // $token = bin2hex(openssl_random_pseudo_bytes(32));
-            // $user_token = [
-            //     'email' => $email,
-            //     'token' => $token,
-            //     'date_created' => time()
-            // ];
-
             $this->db->insert('db_user', $data);
-            //$this->db->insert('user_token', $user_token);
-
-            //$this->_sendEmail($token, 'verify');
-
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat Akun Anda Telah Aktif. Silahkan Login</div>');
             redirect('auth');
-            //end 
 		}
-		
 	}
-
-
-	//verivikasi 
-
-	
-
 	public function logout()
 	{
-
 		$this->session->unset_userdata('email');
 		$this->session->unset_userdata('role_id');
 
