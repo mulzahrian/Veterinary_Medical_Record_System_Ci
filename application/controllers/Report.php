@@ -27,7 +27,7 @@ class Report extends CI_Controller
 		$this->load->view('report/index', $data);
 		$this->load->view('templates/footer');
 	}
-//satu
+
 	public function satu()
 
 	{
@@ -66,9 +66,6 @@ class Report extends CI_Controller
 
     }
 }
-//satu
-
-	//dua
 	public function dua()
 
 	{
@@ -87,9 +84,7 @@ class Report extends CI_Controller
 		$this->load->view('report/dua', $data);
 		$this->load->view('templates/footer');
 	}
-//dua
 
-	//dua
 	public function tiga()
 
 	{
@@ -108,6 +103,4 @@ class Report extends CI_Controller
 		$this->load->view('report/tiga', $data);
 		$this->load->view('templates/footer');
 	}
-//dua
-
 }
