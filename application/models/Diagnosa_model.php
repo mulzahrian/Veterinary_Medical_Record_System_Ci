@@ -14,7 +14,6 @@ class Diagnosa_model extends CI_model {
 
     public function hapusDataDiagnosa($id)
     {
-        // $this->db->where('id', $id);
         $this->db->delete('db_diagnosa', ['id' => $id]);
     }
 
@@ -23,17 +22,10 @@ class Diagnosa_model extends CI_model {
         return $this->db->get_where('db_diagnosa', ['id' => $id])->row_array();
     }
 
-    
-
-    //ubah data rekam medis
     public function ubahDataDiagnosa()
     {
         $data = [
             "diagnosa" => $this->input->post('diagnosa', true),
-            
-            //"daerah" => $this->input->post('daerah', true),
-            //"pekerjaan" => $this->input->post('pekerjaan', true),
-            //"alamat" => $this->input->post('alamat', true)
         ];
 
         $this->db->where('id', $this->input->post('id'));
