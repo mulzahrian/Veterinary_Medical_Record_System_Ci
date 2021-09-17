@@ -3,17 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Dokter_model extends CI_model {
 
-    //peternak data
     public function getAllPeternak()
     {
         return $this->db->get('db_peternak')->result_array();
     }
 
-    
-
     public function hapusDataPeternak($id)
     {
-        // $this->db->where('id', $id);
         $this->db->delete('db_peternak', ['id' => $id]);
     }
 
@@ -25,7 +21,6 @@ class Dokter_model extends CI_model {
     public function ubahDataPeternak()
     {
         $data = [
-            //"id_peternak" => $this->input->post('id_peternak', true),
             "nama" => $this->input->post('nama', true),
             "daerah" => $this->input->post('daerah', true),
             "pekerjaan" => $this->input->post('pekerjaan', true),
@@ -46,10 +41,6 @@ class Dokter_model extends CI_model {
         $this->db->or_like('alamat', $keyword);
         return $this->db->get('db_peternak')->result_array();
     }
-
-
-    // ending data peternak
-
     public function getAllHewan()
     {
         return $this->db->get('db_hewan')->result_array();
@@ -57,7 +48,6 @@ class Dokter_model extends CI_model {
 
     public function hapusDataHewan($id)
     {
-        // $this->db->where('id', $id);
         $this->db->delete('db_hewan', ['id' => $id]);
     }
 
@@ -84,13 +74,6 @@ class Dokter_model extends CI_model {
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('db_hewan', $data);
     }
-
-    
-
-    //data hewan ternak 
-   
-
-   //data rekam medis 
 
     public function tambahDataMedis()
     {
@@ -134,24 +117,14 @@ class Dokter_model extends CI_model {
     $this->db->from('db_hewan');
     $this->db->where('id_peternak');
     $this->db->where('id_peternak',$id_peternak);
-    
-    
     return $this->db->get()->result();
   }
-
   public function test2($id_peternak)
     {
         return $this->db->get_where('db_hewan', ['id_peternak' => $id_peternak])->result_array();
     }
-
-    //end data rekam medis
-
-    //hewan test
-
     public function animaltest($id_hewan)
     {
         return $this->db->get_where('db_rekam_medis', ['id_hewan' => $id_hewan])->result_array();
     }
-
-    //hewan test end
 }
