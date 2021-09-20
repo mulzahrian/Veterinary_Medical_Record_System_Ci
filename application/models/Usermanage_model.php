@@ -8,7 +8,6 @@ class Usermanage_model extends CI_model {
 
     public function hapusDatauser($id)
     {
-        // $this->db->where('id', $id);
         $this->db->delete('db_user', ['id' => $id]);
     }
 
@@ -24,7 +23,6 @@ class Usermanage_model extends CI_model {
             "email" => $this->input->post('email', true),
             "role_id" => $this->input->post('role_id', true),
             "is_active" => $this->input->post('is_active', true),
-            //"is_active" => $this->input->post('is_active', true)
         ];
 
         $this->db->where('id', $this->input->post('id'));
