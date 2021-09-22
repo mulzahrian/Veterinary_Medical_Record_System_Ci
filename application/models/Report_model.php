@@ -8,7 +8,6 @@ public function getLaporanById($id)
     {
         return $this->db->get_where('db_rekam_medis', ['id' => $id])->row_array();
     }
-//cari 
 
     public function cariDataReport()
     {
@@ -28,22 +27,12 @@ public function getLaporanById($id)
         $this->db->or_like('tahun', $keyword);
         return $this->db->get('db_rekam_medis')->result_array();
     }
-
-//end of cari
-	
-
-  //satu 
-
+	 
     public function getSatu()
     {
         $query = "SELECT * FROM db_rekam_medis WHERE tahun = '2019' ";
         return $this->db->query($query)->result_array();
     }
-
-    //end of satu
-
-
-    //dua 
 
     public function getDua()
     {
@@ -51,16 +40,10 @@ public function getLaporanById($id)
         return $this->db->query($query)->result_array();
     }
 
-    //end of dua
-
-    //tiga 
-
     public function getTiga()
     {
         $query = "SELECT * FROM db_rekam_medis WHERE tahun = '2017' ";
         return $this->db->query($query)->result_array();
     }
-
-    //end of tiga
 
 }
