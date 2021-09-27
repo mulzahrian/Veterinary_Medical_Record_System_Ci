@@ -43,7 +43,6 @@ class Laporan_model extends CI_model {
 
     public function hapusDataLaporan($id)
     {
-        // $this->db->where('id', $id);
         $this->db->delete('db_rekam_medis', ['id' => $id]);
     }
 
@@ -52,7 +51,6 @@ class Laporan_model extends CI_model {
         return $this->db->get_where('db_rekam_medis', ['id' => $id])->row_array();
     }
 
-    //ubah data rekam medis
     public function ubahDataLaporan()
     {
         $data = [
@@ -67,10 +65,7 @@ class Laporan_model extends CI_model {
             "alamat" => $this->input->post('alamat', true),
             "diagnosa" => $this->input->post('diagnosa', true),
             "vaksin" => $this->input->post('vaksin', true),
-            "tahun" => $this->input->post('tahun', true),
-            //"daerah" => $this->input->post('daerah', true),
-            //"pekerjaan" => $this->input->post('pekerjaan', true),
-            //"alamat" => $this->input->post('alamat', true)
+            "tahun" => $this->input->post('tahun', true)
         ];
 
         $this->db->where('id', $this->input->post('id'));
