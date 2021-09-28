@@ -8,37 +8,16 @@ class Grafik_model extends CI_Model
       return $this->db->query($sql);
   }
 
-  //2018
-
-
-
-  //test
-
-  //end test
-
   function hasil_survey1() {
       $sql = "SELECT diagnosa AS hasil, COUNT(*) as total FROM db_rekam_medis WHERE tahun = '2018' GROUP BY hasil ";
       return $this->db->query($sql);
   }
 
-  //end of 2018
-
-
-  //2018
-
   function hasil_survey2() {
       $sql = "SELECT diagnosa AS hasil, COUNT(*) as total FROM db_rekam_medis WHERE tahun = '2017' GROUP BY hasil ";
       return $this->db->query($sql);
   }
-
-  //end of 2018
-
-//chart baru
-  
-
-    //chart baru 
-
-    //curve
+	
 function kode2019(){
 $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE tahun = '2019' ");
 $total = $query->num_rows();
@@ -56,11 +35,7 @@ $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE tahun = '2017' ");
 $total = $query->num_rows();
 return $total;
 }
-
-    //curve
-
-//Chart Sapi Kambing 
-
+	
 function Sapi(){
 $query = $this->db->query("SELECT * FROM db_hewan WHERE jenis_hewan = 'Sapi' ");
 $total = $query->num_rows();
@@ -72,14 +47,6 @@ $query = $this->db->query("SELECT * FROM db_hewan WHERE jenis_hewan = 'Kambing' 
 $total = $query->num_rows();
 return $total;
 }
-
-
-
-//End Chart Sapi Kambing 
-
-
-
-//chart berdasarkan daerah 
 
 function Kec_Bunga_Raya(){
 $query = $this->db->query("SELECT * FROM db_hewan WHERE daerah = 'Kec.Bunga Raya' ");
@@ -165,12 +132,6 @@ $total = $query->num_rows();
 return $total;
 }
 
-
-//end chart berdasarkan daerah 
-
-
-//chart tahun 2019
-
 function tidak_ada19(){
 $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE diagnosa = 'Tidak Ada' and tahun ='2019' ");
 $total = $query->num_rows();
@@ -218,12 +179,6 @@ $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE diagnosa = 'ORF' a
 $total = $query->num_rows();
 return $total;
 }
-
-
-
-//chart end tahun 2019
-
-//chart tahun 2018
 
 function tidak_ada18(){
 $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE diagnosa = 'Tidak Ada' and tahun ='2018' ");
@@ -274,11 +229,6 @@ return $total;
 }
 
 
-
-//chart end tahun 2018
-
-//chart tahun 2017
-
 function tidak_ada17(){
 $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE diagnosa = 'Tidak Ada' and tahun ='2017' ");
 $total = $query->num_rows();
@@ -326,12 +276,6 @@ $query = $this->db->query("SELECT * FROM db_rekam_medis WHERE diagnosa = 'ORF' a
 $total = $query->num_rows();
 return $total;
 }
-
-
-
-//chart end tahun 2017
-
-
 
 
 }
