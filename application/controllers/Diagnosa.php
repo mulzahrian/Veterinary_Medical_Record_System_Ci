@@ -43,9 +43,6 @@ class Diagnosa extends CI_Controller
 			redirect('diagnosa');
 
 		}
-
-		
-
 	}
 
 	public function hapus($id)
@@ -61,15 +58,9 @@ class Diagnosa extends CI_Controller
         $data['title'] = 'Form Ubah Data Diagnosa';
         $data['db_user'] = $this->db->get_where('db_user',['email' =>
         $this->session->userdata('email')])->row_array();
-        $data['diagnosa'] = $this->Diagnosa_model->getDiagnosaById($id);
-        
+        $data['diagnosa'] = $this->Diagnosa_model->getDiagnosaById($id);      
 
        $this->form_validation->set_rules('diagnosa', 'Diagnosa', 'required');
-     
-        
-        //$this->form_validation->set_rules('daerah', 'Daerah', 'required');
-        //$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
-        //$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -82,7 +73,5 @@ class Diagnosa extends CI_Controller
             redirect('diagnosa');
         }
     }
-
-    //end of ubah
 
 }
