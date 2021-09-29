@@ -4,16 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Auth extends CI_Controller 
 
 { 
-
 	public function __construct()
 
 	{
-
-		parent::__construct();  //panggil method cunstruct di CI Controler
+		parent::__construct();
 		$this->load->library('form_validation');
-
-
-
 	}
 
 	public function index()
@@ -32,9 +27,6 @@ class Auth extends CI_Controller
 		{
 		$this->_login();
 		}
-		
-
-
 	}
 
 	private function _login()
@@ -50,8 +42,6 @@ class Auth extends CI_Controller
 					$data = [
 						'email' => $db_user['email'],
 						'role_id' => $db_user['role_id']
-
-
 					];
 					$this->session->set_userdata($data);
 					if($db_user['role_id'] == 1){
@@ -61,8 +51,6 @@ class Auth extends CI_Controller
 					} else {
 						redirect('dokter');
 					}
-					
-
 				}else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   			Password Salah!!
