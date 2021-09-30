@@ -19,8 +19,4 @@ class Admin_model extends CI_Model
   function total_rows2() {
     return $this->db->get('db_hewan')->num_rows();
   }
-
-
-
-
 }
