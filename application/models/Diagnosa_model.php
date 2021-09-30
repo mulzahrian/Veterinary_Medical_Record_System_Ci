@@ -2,8 +2,6 @@
 
 class Diagnosa_model extends CI_model {
 
-	
-
     public function cariDataDiagnosa()
     {
         $keyword = $this->input->post('keyword', true);
@@ -31,6 +29,4 @@ class Diagnosa_model extends CI_model {
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('db_diagnosa', $data);
     }
-
-
 }
