@@ -2,8 +2,7 @@
 <div id="content-wrapper">
 
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
+            
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
@@ -11,7 +10,7 @@
           <li class="breadcrumb-item active">Blank Page</li>
         </ol>
 
-        <!-- Page Content -->
+
         <h1><?= $title; ?></h1>
         <hr>
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
@@ -19,15 +18,6 @@
 
       <?php endif; ?>
 
-      <!--tambah data mahasiswa-->
-
-    <!-- end tambah data-->
-
-    <!-- form search -->
-   
-    <!-- end form search -->
-
-    <!-- isi data-->
     <div class="col-md-8">
 
        <div class="card">
@@ -43,8 +33,6 @@
            <b><label>Jenis Hewan</label></b>
         <input type="text" list="data_hewan" class="form-control" id="id_hewan" name="id_hewan"  placeholder=" Hewan" onkeyup="isi_otomatis()" >
          </div>
-
-
 
          <div class="form-group">
           <b><label>Jenis Hewan</label></b>
@@ -71,7 +59,6 @@
         <input type="text" class="form-control" id="nama" name="nama" readonly=""  placeholder=" Nama ">
          </div>
 
-
           <div class="form-group">
             <b><label>Daerah</label></b>
         <input type="text" class="form-control" id="daerah" name="daerah" readonly=""  placeholder=" Daerah" >
@@ -87,13 +74,10 @@
         <input type="text" class="form-control" id="no_telpon" name="no_telpon" readonly=""  placeholder="No Telpon" >
          </div>
          
-
          <div class="form-group">
           <b><label>Alamat</label></b>
         <input type="text" class="form-control" id="alamat" name="alamat" readonly=""  placeholder=" Alamat" >
          </div>
-
-         
 
          <div class="form-group">
           <b><label>Diagnos Penyakit</label></b>
@@ -125,24 +109,7 @@
                     </form>
                 </div>
             </div>
-
-    
-
-    <!-- end isi data-->
-
-
-        <!-- card extensi foto dari boostrap dokumentasi -->
-
-
-
-
-        <!-- card end -->
-        
-
-
 </div>
-
-
 <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -161,6 +128,4 @@
                                         }
                                     });
                                 }
-
-
 </script>
