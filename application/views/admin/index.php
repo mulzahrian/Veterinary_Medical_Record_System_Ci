@@ -6,7 +6,6 @@
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html"><?= $title; ?></a>
@@ -14,13 +13,8 @@
           <li class="breadcrumb-item active"><?= $title; ?></li>
         </ol>
 
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
         <hr>
-
-        <!-- isi data -->
-
-<!--card board-->
 
 
  <div class="row">
@@ -77,12 +71,6 @@
 
         </div>
 
-
-
-
-<!--end of cardboard-->
-
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -118,8 +106,6 @@
     <h1> Dinas Peternakan,Perikanan Dan Kelautan Siak</h1>
   </center>
 
-  <!--card-->
-
   <div class="card text-center">
   <div class="card-header">
     Visi Dan Misi
@@ -145,10 +131,6 @@
   </div>
 </div>
 
-  <!--end of card-->
-
-  <!--alamat-->
-
   <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Alamat</h5>
@@ -158,19 +140,7 @@
   </div>
 </div>
 
-  <!--alamat-->
-
-
   </div>
 
-<!-- isi data-->
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
       
