@@ -10,17 +10,7 @@
                 <div class="card-body">
                     <form action="" method="post">
                         <input type="hidden" name="id" value="<?= $ubah['id']; ?>">
-
-                        <!--div class="form-group">
-                            <label for="id_peternak">ID Peternak</label>
-                            <input type="text" name="id_peternak" class="form-control" id="id_peternak" value="<?= $id_peternak['id_peternak']; ?>">
-                            <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
-                        <!--/div-->
-
                        
-                      
-                        
-
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama" value="<?= $ubah['nama']; ?>">
@@ -45,10 +35,6 @@
                             <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
                         </div>
 
-                       
-
-
-      
                         <button type="submit" name="ubah" class="btn btn-primary float-right">Ubah Data</button>
                     </form>
                 </div>
