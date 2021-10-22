@@ -1,7 +1,6 @@
 <div id="content-wrapper">
 
       <div class="container-fluid">
-
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -15,13 +14,8 @@
         <hr>
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
     <?php if ($this->session->flashdata('flash')) : ?>
-
       <?php endif; ?>
-
-      <!--tambah data mahasiswa-->
-
-    <!-- end tambah data-->
-
+            
     <!-- form search -->
     <div class="row mt-3">
         <div class="col-md-6">
@@ -31,26 +25,17 @@
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">Cari</button>
                     </div>
-
             </form>
-
         </div>
         <hr>
-
   <div>
-
-    
     </div>
     </div>
-
-    </div>
-
+ </div>
 <hr>
     <!-- end form search -->
-
     <!-- isi data-->
     <div class="col-md">
-
     <table class="table table-hover">
   <thead>
     <tr>
@@ -64,7 +49,6 @@
       <th scope="col">Diagnosa</th>
       <th scope="col">Vaksinasi</th>
       <th scope="col">Tahun</th>
-      
     </tr>
   </thead>
   <tbody>
@@ -81,26 +65,9 @@
       <td><?= $dr['diagnosa'] ?></td>
       <td><?= $dr['vaksin'] ?></td>
       <td><?= $dr['tahun'] ?></td>
-
-      
     </tr>
     <?php $i++; ?>
     <?php endforeach ?>
-    
   </tbody>
 </table>
-
-
-    <!-- end isi data-->
-
-
-        <!-- card extensi foto dari boostrap dokumentasi -->
-
-
-
-
-        <!-- card end -->
-        
-
-
-      </div>
+</div>
