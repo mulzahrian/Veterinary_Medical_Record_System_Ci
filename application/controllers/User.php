@@ -20,8 +20,6 @@ class User extends CI_Controller
 		$this->load->view('user/index', $data);
 		$this->load->view('templates/footer');
 	}
-
-// ubah 
 	public function edit()
     {
         $data['title'] = 'Edit Profile';
@@ -40,7 +38,6 @@ class User extends CI_Controller
             $nama = $this->input->post('nama');
             $email = $this->input->post('email');
 
-            // cek jika ada gambar yang akan diupload
             $upload_image = $_FILES['gambar']['name'];
 
             if ($upload_image) {
@@ -70,6 +67,4 @@ class User extends CI_Controller
             redirect('user');
         }
     }
-
-//ini end 
 }
