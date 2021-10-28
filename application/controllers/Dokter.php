@@ -76,13 +76,7 @@ class Dokter extends CI_Controller
         $this->session->userdata('email')])->row_array();
         $data['id_peternak'] = $this->Dokter_model->getPeternakById($id);
         
-
-       //$this->form_validation->set_rules('id_hewan', 'Hewan', 'required');
         $this->form_validation->set_rules('nama', 'nama', 'required');
-        //$this->form_validation->set_rules('jenis_kelamin', 'Kelamin', 'required');
-        //$this->form_validation->set_rules('umur', 'Umur', 'required');
-        //$this->form_validation->set_rules('id_peternak', 'Peternak', 'required');
-        //$this->form_validation->set_rules('nama', 'Nama', 'required');
         $this->form_validation->set_rules('daerah', 'Daerah', 'required');
         $this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
@@ -99,8 +93,6 @@ class Dokter extends CI_Controller
         }
     }
 
-    //hewan ternak 
-
 public function hewan()
     {
         $data['title'] = 'Hewan';
@@ -110,11 +102,7 @@ public function hewan()
 
         $data['id_hewan'] = $this->db->get('db_hewan')->result_array();
 
-
-		
-
         $this->form_validation->set_rules('id_hewan', 'Hewan', 'required');
-        //$this->form_validation->set_rules('id_hewan2', 'Hewan2', 'required');
         $this->form_validation->set_rules('jenis_hewan', 'Jenis', 'required');
         $this->form_validation->set_rules('jenis_kelamin', 'Kelamin', 'required');
         $this->form_validation->set_rules('umur', 'Umur', 'required');
@@ -123,18 +111,12 @@ public function hewan()
 		$this->form_validation->set_rules('daerah', 'Daerah', 'required');
 		$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
-
-
 		if($this->form_validation->run() == false ) {
-
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('dokter/hewan', $data);
 		$this->load->view('templates/footer');
-
-
     } else {
-
     	$data = [
             'id_hewan' => $this->input->post('id_hewan'),
             //'id_hewan2' => $this->input->post('id_hewan2'),
@@ -153,7 +135,6 @@ public function hewan()
 		</div>');
 		redirect('dokter/hewan');
     }
-
  }
 
  public function hapus_hewan($id)
@@ -182,8 +163,7 @@ public function detailhewan($id)
         $this->session->userdata('email')])->row_array();
         $data['id_hewan'] = $this->Dokter_model->getHewanById($id);
         
-
-       $this->form_validation->set_rules('id_hewan', 'Hewan', 'required');
+        $this->form_validation->set_rules('id_hewan', 'Hewan', 'required');
         $this->form_validation->set_rules('jenis_hewan', 'Jenis', 'required');
         $this->form_validation->set_rules('jenis_kelamin', 'Kelamin', 'required');
         $this->form_validation->set_rules('umur', 'Umur', 'required');
@@ -207,7 +187,6 @@ public function detailhewan($id)
 
 function form_penjualan_autocomplit() {
         $id_peternak = $_GET['id_peternak'];
-        //$sql_barang = "SELECT tb.nama_barang,ts.satuan,tb.harga_jual,tb.stok_barang FROM tbl_barang as tb, tbl_satuan as ts where tb.barang_satuan=ts.id_satuan and kd_barang='$kd_barang' ";
         $sql_peternak = "SELECT * FROM `db_peternak` WHERE id_peternak='$id_peternak' ";
         $db_peternak = $this->db->query($sql_peternak)->row_array();
         $data = array(
@@ -222,7 +201,6 @@ function form_penjualan_autocomplit() {
 
     function form_penjualan1_autocomplit() {
         $id_hewan = $_GET['id_hewan'];
-        //$sql_barang = "SELECT tb.nama_barang,ts.satuan,tb.harga_jual,tb.stok_barang FROM tbl_barang as tb, tbl_satuan as ts where tb.barang_satuan=ts.id_satuan and kd_barang='$kd_barang' ";
         $sql_peternak = "SELECT * FROM `db_hewan` WHERE id_hewan='$id_hewan' ";
         $db_peternak = $this->db->query($sql_peternak)->row_array();
         $data = array(
@@ -235,33 +213,20 @@ function form_penjualan_autocomplit() {
             'daerah' => $db_peternak['daerah'],
             'pekerjaan' => $db_peternak['pekerjaan'],
             'alamat' => $db_peternak['alamat'],
-
-            
-            
         );
         echo json_encode($data);
     }
 
     function form_penjualan2_autocomplit() {
         $id_hewan2 = $_GET['id_hewan2'];
-        //$sql_barang = "SELECT tb.nama_barang,ts.satuan,tb.harga_jual,tb.stok_barang FROM tbl_barang as tb, tbl_satuan as ts where tb.barang_satuan=ts.id_satuan and kd_barang='$kd_barang' ";
         $sql_peternak = "SELECT * FROM `db_hewan` WHERE id_hewan2='$id_hewan2' ";
         $db_peternak = $this->db->query($sql_peternak)->row_array();
         $data = array(
             'id_hewan2' => $db_peternak['id_hewan2'],
             'id_hewan' => $db_peternak['id_hewan'],
-
-            
-            
         );
         echo json_encode($data);
-    }
- 
-
-
-    //hewan ternak end 
-
-    //rekam medis mulai 
+    } 
 
 public function medis()
     {
@@ -297,8 +262,6 @@ public function medis()
         $this->load->view('templates/sidebar', $data);
         $this->load->view('dokter/medis', $data);
         $this->load->view('templates/footer');
-
-
     }else
      {
             $this->Dokter_model->tambahDataMedis();
@@ -307,24 +270,15 @@ public function medis()
         }
  }
 
-
- //test
-
-
  public function test($id_peternak)
     {
         $data['title'] = 'Detail Peternak';
 
         $data['db_user'] = $this->db->get_where('db_user',['email' =>
         $this->session->userdata('email')])->row_array();
-
-       
         $data['coba'] = $this->Dokter_model->test2($id_peternak);
 
-        //$data['id_hewan'] = $this->db->get('db_rekam_medis')->result_array();
-
-
-    if($this->form_validation->run() == false ) {
+    	if($this->form_validation->run() == false ) {
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -336,26 +290,13 @@ public function medis()
 }
 
 
-
- //test
-
-
-//hewan test
-
 public function animtest($id_hewan)
     {
         $data['title'] = 'Riwayat Rekam Medis';
-
         $data['db_user'] = $this->db->get_where('db_user',['email' =>
         $this->session->userdata('email')])->row_array();
-
-       
         $data['coba1'] = $this->Dokter_model->animaltest($id_hewan);
-
-        //$data['id_hewan'] = $this->db->get('db_rekam_medis')->result_array();
-
-
-    if($this->form_validation->run() == false ) {
+        if($this->form_validation->run() == false ) {
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -365,12 +306,4 @@ public function animtest($id_hewan)
 
     }
 }
-
-
-//end hew test
-
- 
-
-
-
 }
