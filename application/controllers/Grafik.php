@@ -1,29 +1,20 @@
-//Grafik Data
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Grafik extends CI_Controller 
-
 { 
-
 	 public function __construct()
     {
         parent::__construct();
         $this->load->model('Grafik_model');
         $this->load->library('form_validation');
     }
-
-
 	 function index()
-
 	{
 		$data['title'] = 'Grafik';
 		$data['db_user'] = $this->db->get_where('db_user',['email' =>
 		$this->session->userdata('email')])->row_array();
-
-		//$data['diagnosa'] = $this->db->get('db_rekam_medis')->result_array();
-
-
+		 
 		$data['pie_data']=$this->Grafik_model->hasil_survey();
 		$data['pie_data1']=$this->Grafik_model->hasil_survey1();
 		$data['pie_data2']=$this->Grafik_model->hasil_survey2();
@@ -33,7 +24,6 @@ class Grafik extends CI_Controller
 
 		$data['sapi']=$this->Grafik_model->Sapi();
 		$data['kambing']=$this->Grafik_model->Kambing();
-		//daerah chart 
 		$data['Kec_Bunga_Raya']=$this->Grafik_model->Kec_Bunga_Raya();
 		$data['Kec_Dayun']=$this->Grafik_model->Kec_Dayun();
 		$data['Kec_Kandis']=$this->Grafik_model->Kec_Kandis();
@@ -49,9 +39,6 @@ class Grafik extends CI_Controller
 		$data['Kec_sungai_mandau']=$this->Grafik_model->Kec_sungai_mandau();
 		$data['Kec_mempura']=$this->Grafik_model->Kec_mempura();
 
-		//end daerah chart
-
-		//2019 chart
 		$data['tidak_ada19']=$this->Grafik_model->tidak_ada19();
 		$data['bff_helmi19']=$this->Grafik_model->bff_helmi19();
 		$data['myasis19']=$this->Grafik_model->myasis19();
@@ -61,9 +48,6 @@ class Grafik extends CI_Controller
 		$data['Scabies19']=$this->Grafik_model->Scabies19();
 		$data['ORF19']=$this->Grafik_model->ORF19();
 
-		//2019 end chart
-
-		//2018 chart
 		$data['tidak_ada18']=$this->Grafik_model->tidak_ada18();
 		$data['bff_helmi18']=$this->Grafik_model->bff_helmi18();
 		$data['myasis18']=$this->Grafik_model->myasis18();
@@ -73,9 +57,6 @@ class Grafik extends CI_Controller
 		$data['Scabies18']=$this->Grafik_model->Scabies18();
 		$data['ORF18']=$this->Grafik_model->ORF18();
 
-		//2018 end chart
-
-		//2018 chart
 		$data['tidak_ada17']=$this->Grafik_model->tidak_ada17();
 		$data['bff_helmi17']=$this->Grafik_model->bff_helmi17();
 		$data['myasis17']=$this->Grafik_model->myasis17();
@@ -85,30 +66,10 @@ class Grafik extends CI_Controller
 		$data['Scabies17']=$this->Grafik_model->Scabies17();
 		$data['ORF17']=$this->Grafik_model->ORF17();
 
-		//2018 end chart
-
-		
-
-
-		
-
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('grafik/index', $data);
 		$this->load->view('templates/footer');
 	}
-
-//function survey_diagnosa() {    
- //foreach($this->Grafik_model->hasil_survey()->result_array() as $row)
-    //{ 
-  //$data[] = array(
-   //'hasil' => $row['hasil'],
-   //'total' => $row['total']
-          //);    
-  //} 
-  //echo json_encode($data);  
-   //}
-
-
 
 }
