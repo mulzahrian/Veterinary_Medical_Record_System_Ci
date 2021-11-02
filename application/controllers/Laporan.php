@@ -1,8 +1,6 @@
-//Main Report Menu
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//Laporan data Controller
 class Laporan extends CI_Controller 
 
 {
@@ -25,8 +23,6 @@ class Laporan extends CI_Controller
        
         $data['db_rekam_medis'] = $this->Laporan_model->getAllLaporan();
 
-        //$data['id_hewan'] = $this->db->get('db_rekam_medis')->result_array();
-
         if( $this->input->post('keyword') ) {
             $data['db_rekam_medis'] = $this->Laporan_model->cariDataLaporan();
         }
@@ -41,8 +37,6 @@ class Laporan extends CI_Controller
 
     }
 }
-
-//masuk 
 
 public function hapus($id)
     {
@@ -74,24 +68,11 @@ public function pdf($id)
     {
         $this->load->library('dompdf_gen');
 
-        //$data['title'] = 'Detail Data Rekam Medis';
-
         $this->load->model('Laporan_model');
         $detail = $this->Laporan_model->detail_data($id);
         $data['detail'] = $detail;
         $where = array('id' => $id);
         
-        
-        
-
-         //$data = array(
-        //'record'  => $this->db->query("SELECT * FROM db_rekam_medis where id ='$id'"),
-        //);
-
-
-        //$data['db_rekam_medis'] = $this->Laporan_model->getLaporanById($id);
-        //$data['id_hewan_ternak'] = $this->db->get('db_rekam_medis')->result_array();
-        //$this->load->view('laporan/pdf',$data);
         $this->load->view('laporan/pdf', $data);
 
         $paper_size = 'A5';
@@ -107,8 +88,6 @@ public function pdf($id)
 
     
 }
-
-//ubah data 
 
 public function ubah($id)
     {
@@ -130,10 +109,6 @@ public function ubah($id)
         $this->form_validation->set_rules('diagnosa', 'diagnosa', 'required');
         $this->form_validation->set_rules('vaksin', 'vaksin', 'required');
         $this->form_validation->set_rules('tahun', 'tahun', 'required');
-        
-        //$this->form_validation->set_rules('daerah', 'Daerah', 'required');
-        //$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
-        //$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -147,17 +122,10 @@ public function ubah($id)
         }
     }
 
-    //end of ubah
-
-//excel 
-
     public function excel()
     {
-        //$data['medis'] = $this->Laporan_model->getAllLaporan();
-
         $data['medis'] = $this->Laporan_model->tampil_data('db_rekam_medis')->result();
-
-        //$data['medis'] = $this->db->get('db_rekam_medis')->result_array();
+	    
         require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
         require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
 
@@ -214,16 +182,5 @@ public function ubah($id)
     $writer=PHPExcel_IOFactory::createwriter($object, 'Excel2007');
     $writer->save('php://output');
     exit;
-
-}
-
-
-//end of excel
-
-
-
-    
-
-
-
+ }
 }
