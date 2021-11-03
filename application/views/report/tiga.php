@@ -1,23 +1,14 @@
 
-
-    
-
-    <div id="content-wrapper">
-
+   <div id="content-wrapper">
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
           </li>
           <li class="breadcrumb-item active"></li>
         </ol>
-
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
         <hr>
-
         <div class="row mt-3">
         <div class="col-md-6">
             <form action="" method="post">
@@ -31,13 +22,7 @@
         </div>
     </div>
 <hr>
-    <!-- end form search -->
-
-        <!-- isi data -->
-
-
      <div class="col-md">
-
     <table class="table table-hover">
   <thead>
     <tr>
@@ -48,8 +33,6 @@
       <th scope="col">Jenis Hewan</th>
       <th scope="col">Diagnosa</th>
       <th scope="col">Action</th>
-      
-    
     </tr>
   </thead>
   <tbody>
@@ -66,22 +49,9 @@
         <a href="<?= base_url(); ?>report/detail/<?= $dr['id']; ?>"
                         class="btn btn-primary btn-sm float-center"><i class="fas fa-eye"></i></a>
       </td>
-     
     </tr>
     <?php $i++; ?>
     <?php endforeach ?>
-    
   </tbody>
 </table>
-
-<!-- isi data-->
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      
