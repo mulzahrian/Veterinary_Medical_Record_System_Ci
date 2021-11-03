@@ -1,26 +1,14 @@
 
-
-    
-
     <div id="content-wrapper">
-
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html"><?= $title; ?></a>
           </li>
           <li class="breadcrumb-item active"><?= $title; ?></li>
         </ol>
-
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
         <hr>
-
-        <!-- isi data -->
-
-
       <table class="table">
   <thead>
     <tr>
@@ -35,7 +23,6 @@
       <td>Data Hewan 2019</td>
       <td>
         <a href="<?= base_url(); ?>report/satu" class="btn btn-warning btn-sm float-center"><i class="fas fa-calendar"></i> 2019</a>
-
       </td>
     </tr>
     <tr>
@@ -50,14 +37,4 @@
     </tr>
   </tbody>
 </table>
-<!-- isi data-->
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      
