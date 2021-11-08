@@ -2,7 +2,6 @@
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
@@ -10,21 +9,9 @@
           <li class="breadcrumb-item active">Blank Page</li>
         </ol>
 
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
         <hr>
-        
-
-      <!--tambah data mahasiswa-->
-
-    <!-- end tambah data-->
-
-    <!-- form search -->
-    
 <hr>
-    <!-- end form search -->
-
-    <!-- isi data-->
     <div class="col-md">
 
 <div class="card">
@@ -73,22 +60,7 @@
                     <p class="csard-title"><?= $db_rekam_medis['tahun']; ?></p>
                     
                     <a href="<?= base_url(); ?>laporan" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i>Kembali</a>
-                    <!--a href="<?= base_url(); ?>laporan/pdf" class="btn btn-warning"><i class="fas fa-print"></i>Export Pdf</a-->
                 </div>
             </div>
-    
-
-
-    <!-- end isi data-->
-
-
-        <!-- card extensi foto dari boostrap dokumentasi -->
-
-
-
-
-        <!-- card end -->
-        
-
 
       </div>
