@@ -1,7 +1,6 @@
 <div id="content-wrapper">
 
       <div class="container-fluid">
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Riwayat Medis</a>
@@ -16,7 +15,6 @@
     <?php if ($this->session->flashdata('flash')) : ?>
       <?php endif; ?>
             
-    <!-- form search -->
     <div class="row mt-3">
         <div class="col-md-6">
             <form action="" method="post">
@@ -33,8 +31,6 @@
     </div>
  </div>
 <hr>
-    <!-- end form search -->
-    <!-- isi data-->
     <div class="col-md">
     <table class="table table-hover">
   <thead>
