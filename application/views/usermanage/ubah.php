@@ -14,25 +14,21 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama" value="<?= $ubah['nama']; ?>">
-                            <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" name="email" readonly="" class="form-control" id="email" value="<?= $ubah['email']; ?>">
-                            <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
                         </div>
 
                         <div class="form-group">
                             <label for="role_id">Level</label>
                             <input type="text" name="role_id" class="form-control" id="role_id" value="<?= $ubah['role_id']; ?>">
-                            <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
                         </div>
 
                         <div class="form-group">
                             <label for="is_active">Aktivasi</label>
                             <input type="text" name="is_active" class="form-control" id="is_active" value="<?= $ubah['is_active']; ?>">
-                            <!--small class="form-text text-danger"><?= form_error('jenis_hewan'); ?></small-->
                         </div>
 
                         <button type="submit" name="ubah" class="btn btn-primary float-right">Ubah Data</button>
