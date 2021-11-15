@@ -1,8 +1,6 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<!--2019-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -16,8 +14,7 @@
           ['Diagnosa', ''],
           //<?php $result = $pie_data;?>
 
-          <?php $result = $pie_data;
-    //get number of rows returned
+      <?php $result = $pie_data;
      $num_results = $result->num_rows();
      if( $num_results <= 360){ ?>
 
@@ -27,14 +24,7 @@
          extract($row);
         echo "['{$diagnosa}', '{$total}'], " ;
          } ?>
-                    
-
-                    
-
-
         ]);
-
-
 
         var options = {
           title: 'Grafik Data Penyakit',
@@ -43,21 +33,8 @@
           pieSliceText: 'diagnosa',
           chartArea:{width:'360%',height:'180%'},
           is3D: true
-
-
-          //pieSliceText: 'hasil',
-
-
-
-
-
-          
-
-          
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('chartoval1'));
-
         chart.draw(data, options);
       }
       google.setOnLoadCallback(drawVisualization);
@@ -66,50 +43,29 @@
         echo "Tidak ada data di database.";
     } ?>
     </script>
-
-<!--end 2019-->
-    <!--satu.2-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-
-
           ['Tahun', 'Jumlah'],
           ['2019',  <?php echo $kd2019 ?>],
           ['2018',  <?php echo $kd2018 ?>],
           ['2017',  <?php echo $kd2017 ?>],
-
         ]);
-
         var options = {
           title: 'Data Perkembangan Tahunan',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
         chart.draw(data, options);
       }
     </script>
-
-
-    <!--end satu.2-->
-
-    <!--test1-->
-
-    <!--OVAL 2019-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['Diagnosa', 'Jumlah'],
           ['Tidak Ada', <?php echo $tidak_ada19 ?>],
@@ -121,23 +77,14 @@
           ['Scabies', <?php echo $Scabies19 ?>],
           ['ORF', <?php echo $ORF19 ?>],
         ]);
-
         var options = {
           title: 'Perkembangan Penyakit Hewan 2019',
           is3D: true
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('2019'));
-
         chart.draw(data, options);
       }
     </script>
-
-
-    <!--END 2019 -->
-
-    <!--OVAL 2018-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -160,24 +107,16 @@
           title: 'Perkembangan Penyakit Hewan 2018',
           is3D: true
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('2018'));
-
         chart.draw(data, options);
       }
     </script>
-
-
-    <!--END 2018 -->
-
-    <!--OVAL 2017-->
 
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['Diagnosa', 'Jumlah'],
           ['Tidak Ada', <?php echo $tidak_ada17 ?>],
@@ -189,7 +128,6 @@
           ['Scabies', <?php echo $Scabies17 ?>],
           ['ORF', <?php echo $ORF17 ?>],
         ]);
-
         var options = {
           title: 'Perkembangan Penyakit Hewan 2017',
           is3D: true
@@ -201,46 +139,25 @@
       }
     </script>
 
-
-    <!--END 2017 -->
-
-    <!--end test1-->
-
-    <!--pie chart-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['Jenis', 'Jumlah'],
           ['Sapi', <?php echo $sapi ?>],
           ['Kambing',<?php echo $kambing ?>],
         ]);
-
         var options = {
           title: 'Jumlah Hewan'
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart22'));
-
         chart.draw(data, options);
       }
     </script>
-
-    <!--end pie chart-->
-
-
-    <!--INI TIDAK DI PAKAI-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
-
-              
 
       function drawChart() {
 
@@ -248,43 +165,22 @@
           ['Hasil', 'Total'],
           //<?php $result = $pie_data;?>
 
-          <?php $result = $pie_data1;
-    //get number of rows returned
+     <?php $result = $pie_data1;
     $num_results = $result->num_rows();
     if( $num_results > 0){ ?>
-
-
                     <?php
                     foreach ($pie_data1->result_array() as $row) {
                         extract($row);
                         echo "['{$hasil}', '{$total}'], " ;
                     } ?>
-                    
-
-                    
-
-
         ]);
-
-
-
         var options = {
           title: 'Grafik Data Penyakit',
           colors: ['red','green', 'purple','pink','blue'],
           data: data,
           pieSliceText: 'hasil',
-
-
-
-
-
-          
-
-          
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
-
         chart.draw(data, options);
       }
       google.setOnLoadCallback(drawVisualization);
@@ -293,61 +189,31 @@
         echo "Tidak ada data di database.";
     } ?>
     </script>
-
-    <!--end of dua-->
-
-    <!--tiga-->
-
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
-
-              
-
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['Hasil', 'Total'],
           //<?php $result = $pie_data;?>
 
-          <?php $result = $pie_data2;
-    //get number of rows returned
+     <?php $result = $pie_data2;
     $num_results = $result->num_rows();
     if( $num_results <= 10){ ?>
-
-
                     <?php
                     foreach ($pie_data2->result_array() as $row) {
                         extract($row);
                         echo "['{$hasil}', '{$total}'], " ;
                     } ?>
-                    
-
-                    
-
-
         ]);
-
-
-
         var options = {
           title: 'Grafik Data Penyakit',
           colors: ['red','green', 'purple','pink','blue'],
           data: data,
           pieSliceText: 'hasil',
-
-
-
-
-
-          
-
-          
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
         chart.draw(data, options);
       }
       google.setOnLoadCallback(drawVisualization);
@@ -356,11 +222,6 @@
         echo "Tidak ada data di database.";
     } ?>
     </script>
-
-    <!--end of dua-->
-
-
-    <!--daerah-->
 
     <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
@@ -382,11 +243,7 @@
         ["Lubuk Dalam", <?php echo $Kec_lubuk_dalam ?>, "#b87333"],
         ["Mandau", <?php echo $Kec_sungai_mandau ?>, "#b87333"],
         ["Mempura", <?php echo $Kec_mempura ?>, "#b87333"],
-
-
-        
       ]);
-
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -394,7 +251,6 @@
                          type: "string",
                          role: "annotation" },
                        2]);
-
       var options = {
         title: "Jumlah Hewan Berdasarkan Daerah",
         width: 600,
@@ -406,57 +262,16 @@
       chart.draw(view, options);
   }
   </script>
-
-    <!--end daerah-->
-
-    
-
     <div id="content-wrapper">
-
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Blank Page</li>
         </ol>
-
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
-
-        <!--chart baru-->
-       
-   
-
-        <!--end of chart-->
         <hr>
-<!--coba-->
-
-          <!-- <div class="col-lg-4">
-            <div class="card mb-3">
-              <div class="card-header">
-                <i class="fas fa-chart-pie"></i>
-                Pie Chart Example</div>
-              <div class="card-body">
-                <canvas id="myPieChart" width="100%" height="100"></canvas>
-              </div>
-              
-            </div>
-          </div>
-        </div> -->
-
-
-
-<!--end coba-->
-
-
-        <!-- isi data -->
-
-
-
-
         <div class="row">
           <div class="col-lg-8">
             <div class="card mb-3">
@@ -477,11 +292,7 @@
               <div class="card-footer small text-muted"></div>
             </div>
           </div>
-
           </div>
-
-  <!--coba test 1-->
-
   <div class="row">
           <div class="col-lg-7">
             <div class="card mb-3">
@@ -493,17 +304,6 @@
             </div>
           </div>
     </div>
-
-
-
-
-<!-- <div class="card-header">
-<i class="fas fa-chart-pie">Perkembangan Penyakit Hewan 2019</i>
-<div id="chartoval1" style="width: 400px; height: 300px;"></div>
-</div> -->
-
-
-
 <div class="card-header">
   <i class="fas fa-chart-pie">2019</i>
   <div id="2019" style="width: 700px; height: 300px"></div>
@@ -518,44 +318,5 @@
   <i class="fas fa-chart-pie">2017</i>
   <div id="2017" style="width: 700px; height: 300px"></div>
 </div>
-
-
-<!-- <div class="card-header">
-<i class="fas fa-chart-pie">Perkembangan Penyakit Hewan 2018</i>
-<div id="piechart1" style="width: 900px; height: 500px;"></div>
-</div>
-
-<div class="card-header">
-<i class="fas fa-chart-pie">Perkembangan Penyakit Hewan 2017</i>
-<div id="piechart2" style="width: 900px; height: 500px;"></div>
-</div> -->
-
-
-
-
-
-
-
-
-
-     
-
-<!-- isi data-->
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-
-
-<!--chart baru -->
-
-<!--Load chart js-->
-    
-
-<!-- end fo chart baru-->
       
