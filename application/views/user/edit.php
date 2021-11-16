@@ -1,35 +1,21 @@
-
-
-    
-
-    <div id="content-wrapper">
-
+<div id="content-wrapper">
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Blank Page</li>
         </ol>
-
-        <!-- Page Content -->
         <h1><?= $title; ?></h1>
         <hr>
 <div class="col-md-8">
-        <!-- isi data -->
-
-
   <?= form_open_multipart('user/edit'); ?>
-
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="email" name="email" value="<?= $db_user['email']; ?>" readonly>
     </div>
   </div>
-
   <div class="form-group row">
     <label for="nama" class="col-sm-2 col-form-label">Full Name</label>
     <div class="col-sm-10">
@@ -37,7 +23,6 @@
        <small class="text-danger"><?= form_error('nama'); ?></small>
     </div>
   </div>
-
   <div class="form-group row">
                 <div class="col-sm-2">Picture</div>
                 <div class="col-sm-10">
@@ -54,27 +39,10 @@
                     </div>
                 </div>
             </div>
-
   <div class="form-group row justify-content-end">
-
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Edit</button>
     </div>
-
   </div>
-
-
-
 </form>
-
-<!-- isi data-->
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      
