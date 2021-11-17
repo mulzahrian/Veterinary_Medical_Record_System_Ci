@@ -1,23 +1,15 @@
 
-
-    
-
     <div id="content-wrapper">
-
       <div class="container-fluid">
-
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="index.html"><?= $title; ?></a>
           </li>
           <li class="breadcrumb-item active"><?= $title; ?></li>
         </ol>
-
         <h1><?= $title; ?></h1>
         <hr>
-
-
- <div class="row">
+    <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
@@ -34,7 +26,6 @@
               </a>
             </div>
           </div>
-
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">
@@ -51,7 +42,6 @@
               </a>
             </div>
           </div>
-
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-success o-hidden h-100">
               <div class="card-body">
@@ -68,9 +58,7 @@
               </a>
             </div>
           </div>
-
         </div>
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -99,13 +87,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <div>
-
   <center>
     <h1> Dinas Peternakan,Perikanan Dan Kelautan Siak</h1>
   </center>
-
   <div class="card text-center">
   <div class="card-header">
     Visi Dan Misi
@@ -114,7 +99,7 @@
     <h5 class="card-title">Visi</h5>
     <p class="card-text"> Menjadikan Dinas Peternakan, Perikanan dan Kelautan sebagai Institusi yang profesional dalam mewujudkan peternakan dan perikanan yang tangguh, berdaya saing dengan pemanfaatan sumber daya lokal yang berwawasan lingkungan.</p>
     <h5 class="card-title">Misi</h5>
-
+      
     <p class="card-text"> Meningkatkan kualitas sumber daya manusia (SDM) dengan mengoptimalkan partisipasi Masyarakat peternak/nelayan dan profesionalisme peternak/nelayan serta SDM aparatur dalam rangka pelaksanaan pelayanan prima</p>
 
     <p class="card-text">Meningkatkan produksi dan produktifitas serta populasi dan mutu produk genetik yang berdaya saing, dengan memanfaatkan Sumber Daya Alam (SDA), pengembangan kawasan agribisnis, serta mengembangkan informasi dan teknologi berbasis sumberdaya lokal yang unggul dan ramah lingkungan </p>
@@ -123,24 +108,16 @@
 
     <p class="card-text">Mengembangkan usaha Peternakan dan Perikanan sebagai usaha ekonomi produktif yang mandiri dan berdaya saing.</p>
 
-
-    
   </div>
-  <div class="card-footer text-muted">
-    
+  <div class="card-footer text-muted">    
   </div>
 </div>
-
   <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Alamat</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
     <p class="card-text"><b>Alamat :</b> Perkantoran DPRD Siak Sri Indrapura, Jl. Sei Betung, Rempak, Sabak Auh, Kp. Rempak, Siak, Kabupaten Siak, Riau 28773 </p>
-    
   </div>
 </div>
-
   </div>
-
       </div>
-      
