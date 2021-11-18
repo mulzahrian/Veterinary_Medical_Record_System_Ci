@@ -28,7 +28,6 @@
                             <label for="alamat">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $id_peternak['alamat']; ?>">
                         </div>
-
                         <button type="submit" name="ubah" class="btn btn-primary float-right">Ubah Data</button>
                     </form>
                 </div>
