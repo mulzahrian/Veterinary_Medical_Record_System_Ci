@@ -1,7 +1,4 @@
 
-
-    
-
     <div id="content-wrapper">
 
       <div class="container-fluid">
@@ -13,26 +10,19 @@
           </li>
           <li class="breadcrumb-item active"><?= $title; ?></li>
         </ol>
-
         <!-- Page Content -->
         <h1><?= $title; ?></h1>
-
         <hr>
         <!-- isi data -->
-
         <div class="row">
   <div class="col-lg">
     <?php if (validation_errors()) : ?>
     <div class="alert alert-danger" role="alert">
     <?= validation_errors(); ?>
-
           </div>
         <?php endif; ?>
-
       <?= $this->session->flashdata('message'); ?>
-
     <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Tambah Menu Baru</a>
-
     <table class="table table-hover">
   <thead>
     <tr>
@@ -58,38 +48,15 @@
       <td>
         <a href="" class="badge badge-success">edit</a>
         <a href="" class="badge badge-danger">hapus</a>
-
       </td>
     </tr>
     <?php $i++; ?>
     <?php endforeach ?>
-    
   </tbody>
 </table>
-
-
-
     </div>
-
-
     </div>
-
-  <!-- isi data-->
-
-
-       
-        
-
-
       </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      
-<!-- modal -->
-<!-- Button trigger modal -->
-
-
 <!-- Modal -->
 <div class="modal fade" id="newSubMenuModal" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModallabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -102,13 +69,10 @@
       </div>
       <form action="<?= base_url('menu/submenu'); ?>" method="post">
       <div class="modal-body">
-
         <!-- sub menu input -->
-
         <div class="form-group">
         <input type="text" class="form-control" id="title" name="title" placeholder=" Submenu title">
          </div>
-
          <div class="form-group">
           <select name="menu_id" id="menu_id" class="form-control">
           <option value="">Select Menu</option>
@@ -117,16 +81,12 @@
           <?php endforeach; ?>
           </select>
           </div>
-
-
           <div class="form-group">
         <input type="text" class="form-control" id="url" name="url" placeholder=" Submenu url">
          </div>
-
          <div class="form-group">
         <input type="text" class="form-control" id="icon" name="icon" placeholder=" Submenu icon">
          </div>
-
          <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="is_active" id="is_active" checked>
@@ -135,11 +95,7 @@
                             </label>
                         </div>
                     </div>
-
-
-
         <!-- end of submenu input -->
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
         <button type="submit" class="btn btn-primary">Tambah</button>
