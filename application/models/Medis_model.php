@@ -1,7 +1,5 @@
 <?php 
-
 class Medis_model extends CI_model {
-
 public function tambahDataMedis()
     {
         $data = [
@@ -19,18 +17,13 @@ public function tambahDataMedis()
             "vaksin" => $this->input->post('vaksin', true),
             "tanggal" => $this->input->post('tanggal', true),
             "tahun" => $this->input->post('tahun', true)
-
         ];
 
         $this->db->insert('db_rekam_medis', $data);
     }
-
     public function getAllMedis()
     {
         return $this->db->get('db_rekam_medis')->result_array();
     }
-
-
-
 
 }
